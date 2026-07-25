@@ -14,6 +14,12 @@ async function checkWeather(city) {
     }
 
     const data = await response.json();
+
+const iconCode = data.weather[0].icon;
+
+document.querySelector(".weather-icon").src =
+`https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    
 const weatherIcon = document.querySelector(".weather-icon");
 
 if (data.weather[0].main === "Clouds") {
