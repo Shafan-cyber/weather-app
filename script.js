@@ -45,3 +45,9 @@ if (data.weather[0].main === "Clouds") {
 searchBtn.addEventListener("click", function () {
     checkWeather(searchBox.value);
 });
+
+searchBox.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        checkWeather(searchBox.value);
+    }
+});
